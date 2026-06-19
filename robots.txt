@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://aniakamarka.github.io/index-app-leyu-com-cn-4/sitemap.xml
