@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>资料索引 · 皇冠体育信息整理</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: #f8f5f0;
+            font-family: 'Georgia', 'Noto Serif SC', 'Source Han Serif CN', serif;
+            color: #2e2b28;
+            line-height: 1.7;
+            padding: 0 1.5rem 3rem;
+        }
+        .page-wrap {
+            max-width: 960px;
+            margin: 0 auto;
+            background: #fdfbf7;
+            box-shadow: 0 1px 8px rgba(0,0,0,0.03);
+        }
+        /* 导航 */
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 2rem 0.8rem;
+            border-bottom: 1px solid #e6dfd4;
+        }
+        .nav-brand {
+            font-size: 1.5rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            color: #8b7a5e;
+        }
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: #5a5149;
+            font-size: 0.95rem;
+            border-bottom: 2px solid transparent;
+            transition: border-color 0.2s, color 0.2s;
+        }
+        .nav-links a:hover {
+            border-bottom-color: #b7a589;
+            color: #1f1c19;
+        }
+        /* hero 区 */
+        .hero {
+            padding: 3.5rem 2rem 2.5rem;
+            background: #f5f1ea;
+            margin: 0 0 2.5rem;
+            border-left: 6px solid #c9b99a;
+        }
+        .hero h1 {
+            font-size: 2.2rem;
+            font-weight: 500;
+            color: #2b2620;
+            letter-spacing: 0.02em;
+            margin-bottom: 1.2rem;
+        }
+        .hero p {
+            font-size: 1.05rem;
+            max-width: 720px;
+            color: #3d3832;
+        }
+        .hero .meta-note {
+            display: inline-block;
+            margin-top: 1.5rem;
+            background: #e8dfd2;
+            padding: 0.4rem 1.2rem;
+            font-size: 0.85rem;
+            color: #4e4943;
+            border-radius: 2px;
+        }
+        /* 内容块通用 */
+        section {
+            padding: 0 2rem 2.8rem;
+        }
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: #3d352c;
+            border-left: 4px solid #b7a589;
+            padding-left: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        .card-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.8rem;
+            margin-bottom: 2.2rem;
+        }
+        .card {
+            flex: 1 1 240px;
+            background: #fefcf9;
+            border: 1px solid #e6ddd1;
+            padding: 1.6rem 1.4rem 1.8rem;
+            border-radius: 4px;
+            box-shadow: 0 2px 3px rgba(0,0,0,0.02);
+        }
+        .card h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #4f4439;
+            margin-bottom: 0.6rem;
+            letter-spacing: 0.3px;
+        }
+        .card p {
+            font-size: 0.95rem;
+            color: #4f4942;
+        }
+        .card .tag {
+            display: inline-block;
+            background: #ede7dc;
+            padding: 0.15rem 0.7rem;
+            font-size: 0.75rem;
+            color: #5a5147;
+            margin-top: 0.6rem;
+            border-radius: 10px;
+        }
+        /* 引用块 / 提示框 */
+        .info-box {
+            background: #f4efe7;
+            padding: 1.2rem 1.8rem;
+            border-left: 5px solid #c1ae8b;
+            margin: 2rem 0 1.5rem;
+            font-size: 0.95rem;
+            color: #3b3530;
+            border-radius: 0 4px 4px 0;
+        }
+        .info-box strong {
+            color: #6d5c46;
+        }
+        blockquote {
+            background: #f5f0e8;
+            padding: 0.8rem 1.6rem;
+            margin: 1.2rem 0 1.8rem;
+            border-left: 4px solid #c9b99a;
+            font-style: normal;
+            color: #48403a;
+        }
+        blockquote footer {
+            text-align: right;
+            font-size: 0.85rem;
+            color: #7b6e5f;
+            margin-top: 0.4rem;
+        }
+        /* faq 摘要 */
+        .faq-item {
+            padding: 0.9rem 0;
+            border-bottom: 1px dashed #e1d8cb;
+        }
+        .faq-item:last-of-type {
+            border-bottom: none;
+        }
+        .faq-q {
+            font-weight: 600;
+            color: #3d342c;
+            margin-bottom: 0.2rem;
+        }
+        .faq-a {
+            font-size: 0.95rem;
+            color: #4a423b;
+            padding-left: 0.6rem;
+        }
+        .faq-a a {
+            color: #7d6b53;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-color: #ccbea7;
+        }
+        .faq-a a:hover {
+            color: #3b2f24;
+        }
+        /* 响应式 */
+        @media (max-width: 600px) {
+            body { padding: 0 0.6rem 2rem; }
+            nav { flex-direction: column; align-items: flex-start; gap: 0.6rem; padding: 1rem 1rem 0.6rem; }
+            .nav-links { gap: 1rem; }
+            .hero { padding: 2rem 1.2rem; }
+            .hero h1 { font-size: 1.7rem; }
+            section { padding: 0 1rem 2rem; }
+            .card-grid { gap: 1rem; }
+            .card { flex: 1 1 100%; }
+        }
+        .footer-note {
+            margin-top: 1.5rem;
+            padding: 1.2rem 2rem;
+            border-top: 1px solid #e0d7ca;
+            font-size: 0.85rem;
+            color: #6b6258;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div class="page-wrap">
+    <!-- 导航 -->
+    <nav>
+        <span class="nav-brand">📋 资料索引</span>
+        <ul class="nav-links">
+            <li><a href="#intro">概述</a></li>
+            <li><a href="#scenes">应用场景</a></li>
+            <li><a href="#faq">常见说明</a></li>
+        </ul>
+    </nav>
+
+    <!-- hero -->
+    <div class="hero" id="intro">
+        <h1>信息整理：<a href="https://main-crown.com" style="color: #6d5c46; text-decoration: none; border-bottom: 2px solid #c9b99a;">皇冠体育</a> 相关资源脉络</h1>
+        <p>从资料整合与分类索引的角度，梳理与「皇冠体育」相关的功能模块、内容场景及常规说明。本文不构成任何引导或推荐，仅作为信息组织参考。</p>
+        <div class="meta-note">更新于 2025 · 索引编号 d055cd91959672b0</div>
+    </div>
+
+    <!-- 介绍 + 三个场景模块 -->
+    <section id="scenes">
+        <h2>常见场景模块</h2>
+        <div class="card-grid">
+            <div class="card">
+                <h3>赛事数据归档</h3>
+                <p>整理主流赛事的基础结构、赛程节点与常规统计维度，便于按赛历或联赛类型进行资料查阅。</p>
+                <span class="tag">数据框架</span>
+            </div>
+            <div class="card">
+                <h3>资讯聚合阅读</h3>
+                <p>将体育新闻、队伍动态、赛事前瞻等内容按时间线或联赛标签归类，形成可回溯的信息流。</p>
+                <span class="tag">内容组织</span>
+            </div>
+            <div class="card">
+                <h3>社区讨论梳理</h3>
+                <p>针对热门话题、用户观点及赛事分析帖进行摘要整理，呈现讨论焦点与信息层次。</p>
+                <span class="tag">话题索引</span>
+            </div>
+        </div>
+        <div class="info-box">
+            <strong>📌 说明：</strong> 以上三个场景均基于公开信息与常规内容组织方式，不指向特定平台功能。用户可根据自身需求进一步查阅相关板块。
+        </div>
+    </section>
+
+    <!-- 常见说明 / FAQ 摘要 -->
+    <section id="faq">
+        <h2>常见说明摘要</h2>
+        <div class="faq-item">
+            <div class="faq-q">Q：信息的时效性如何把握？</div>
+            <div class="faq-a">建议以官方公告或赛事主办方发布为准。索引内容仅提供框架参考，具体日期、名单等需核对最新来源。有关 <a href="https://main-crown.com">皇冠体育</a> 的内容整理同样遵循此原则。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">Q：资料分类的依据是什么？</div>
+            <div class="faq-a">按常规体育信息组织逻辑划分：赛事基础数据、动态资讯、社区讨论三大类。分类标签仅作导航使用，不反映内容权重。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">Q：是否包含实时数据？</div>
+            <div class="faq-a">本索引不接入实时数据流，所有示例均为静态结构展示。如需获取即时信息，建议访问相关平台或官方渠道。</div>
+        </div>
+        <blockquote>
+            “信息的价值在于被恰当地组织，而非简单地堆叠。”
+            <footer>—— 资料整理笔记</footer>
+        </blockquote>
+        <div class="info-box" style="margin-top: 1rem;">
+            ⚡ 如果您希望进一步了解信息索引的细节，可以浏览 <a href="https://main-crown.com" style="color: #6d5c46; text-decoration: underline; text-underline-offset: 3px;">皇冠体育</a> 相关内容板块，结合具体场景查阅。
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <div class="footer-note">
+        本页为资料索引型介绍，仅供信息整理参考 · 保持客观与清晰
+    </div>
+</div>
+</body>
+</html>
