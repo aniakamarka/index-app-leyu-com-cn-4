@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>皇冠体育 | 稳定入口与页面说明</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: #f4f5f7;
+            color: #2c3e50;
+            line-height: 1.6;
+            padding: 2rem 1rem;
+        }
+
+        .wrapper {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        /* hero */
+        .hero {
+            text-align: center;
+            padding: 4rem 1.5rem 3rem;
+            background: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 6px 16px rgba(0,0,0,0.03);
+            border: 1px solid #e6e9ed;
+            margin-bottom: 2.5rem;
+        }
+
+        .hero h1 {
+            font-size: 2.4rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            color: #1e2a3a;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: #5a6a7a;
+            max-width: 680px;
+            margin: 0.5rem auto;
+        }
+
+        .hero .tagline {
+            display: inline-block;
+            background: #eef1f5;
+            padding: 0.4rem 1.2rem;
+            border-radius: 40px;
+            font-size: 0.9rem;
+            color: #3d4f60;
+            margin-top: 1.2rem;
+        }
+
+        /* 卡片通用 */
+        .card-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.8rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: 18px;
+            padding: 1.8rem 1.8rem 2rem;
+            border: 1px solid #e2e7ed;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+            transition: all 0.15s ease;
+        }
+
+        .card:hover {
+            box-shadow: 0 8px 18px rgba(0,0,0,0.04);
+            border-color: #d0d6de;
+        }
+
+        .card h3 {
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: #1f2b38;
+            margin-bottom: 0.8rem;
+            border-left: 4px solid #8a9bb0;
+            padding-left: 0.7rem;
+        }
+
+        .card p {
+            color: #3e4f5e;
+            font-size: 0.98rem;
+            margin-bottom: 0.6rem;
+        }
+
+        .card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .card li {
+            padding: 0.35rem 0;
+            font-size: 0.95rem;
+            color: #3f5163;
+            position: relative;
+            padding-left: 1.3rem;
+        }
+
+        .card li::before {
+            content: "—";
+            color: #99aabb;
+            position: absolute;
+            left: 0;
+        }
+
+        /* 说明区 (横跨两列) */
+        .description-area {
+            grid-column: 1 / -1;
+            background: #ffffff;
+            border-radius: 18px;
+            padding: 2rem 2rem 2.2rem;
+            border: 1px solid #e2e7ed;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+            margin-bottom: 0.5rem;
+        }
+
+        .description-area h2 {
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: #1f2b38;
+            margin-bottom: 1rem;
+        }
+
+        .description-area p {
+            margin-bottom: 0.9rem;
+            color: #3e4f5e;
+        }
+
+        .description-area .highlight-link {
+            background: #f0f2f5;
+            padding: 0.3rem 0.6rem;
+            border-radius: 6px;
+            font-weight: 500;
+            color: #1f2b38;
+            text-decoration: none;
+            border-bottom: 2px solid transparent;
+            transition: border 0.1s;
+        }
+
+        .description-area .highlight-link:hover {
+            border-bottom: 2px solid #1f2b38;
+        }
+
+        /* FAQ 摘要 */
+        .faq-summary {
+            background: #ffffff;
+            border-radius: 18px;
+            padding: 1.8rem 2rem 2rem;
+            border: 1px solid #e2e7ed;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+            margin-bottom: 2.5rem;
+        }
+
+        .faq-summary h3 {
+            font-size: 1.4rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+            color: #1f2b38;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #e9edf2;
+            padding: 0.9rem 0;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-q {
+            font-weight: 500;
+            color: #2b3b4b;
+            margin-bottom: 0.2rem;
+            font-size: 1rem;
+        }
+
+        .faq-a {
+            color: #587185;
+            font-size: 0.95rem;
+            padding-left: 0.2rem;
+        }
+
+        /* 底部 */
+        .footer-links {
+            text-align: center;
+            padding: 1.5rem 0 0.5rem;
+            border-top: 1px solid #dce1e8;
+            color: #6a7d8e;
+            font-size: 0.9rem;
+        }
+
+        .footer-links a {
+            color: #2c3e50;
+            text-decoration: none;
+            border-bottom: 1px dotted #9aabb8;
+        }
+
+        .footer-links a:hover {
+            border-bottom: 1px solid #1f2b38;
+        }
+
+        .footer-links span {
+            margin: 0 0.6rem;
+            color: #b4c0cc;
+        }
+
+        /* 响应式 */
+        @media (max-width: 720px) {
+            .card-grid {
+                grid-template-columns: 1fr;
+                gap: 1.4rem;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero {
+                padding: 2.8rem 1rem 2.2rem;
+            }
+
+            .description-area {
+                padding: 1.5rem;
+            }
+
+            .faq-summary {
+                padding: 1.4rem 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+
+    <!-- hero 区 -->
+    <section class="hero">
+        <h1>皇冠体育 · 稳定入口</h1>
+        <p>从一个可靠的角度接触体育资讯与平台内容，无需反复寻找路径。页面说明清晰，体验更直接。</p>
+        <div class="tagline">日常使用 · 信息优先</div>
+    </section>
+
+    <!-- 优势区 + 说明区 (双列 + 跨列) -->
+    <div class="card-grid">
+
+        <!-- 优势卡片 1 -->
+        <div class="card">
+            <h3>访问稳定</h3>
+            <p>保持统一入口，减少因地址变化带来的困扰。通过长期维护的链接直达内容区域，节省每次查找的时间。</p>
+        </div>
+
+        <!-- 优势卡片 2 -->
+        <div class="card">
+            <h3>信息结构清楚</h3>
+            <p>页面板块划分明确，从介绍到常见问题都有对应位置。无论是新朋友还是日常用户，都能快速找到需要的内容。</p>
+        </div>
+
+        <!-- 说明区 (跨两列) -->
+        <div class="description-area">
+            <h2>关于页面与入口</h2>
+            <p>
+                这一页面旨在为访问者提供更稳定的指引。无论您是第一次了解还是长期关注，
+                <a href="https://portal-crown.com" class="highlight-link">皇冠体育</a>
+                都希望为您保留一个清晰、直接的访问方式。我们不对内容做夸大描述，仅从实际使用角度整理信息。
+            </p>
+            <p>
+                页面内容围绕日常场景展开：您可以在任意设备上打开，无需额外配置。优势区列出主要特点，说明区补充背景，
+                FAQ 摘要提前解答常见疑问。所有信息均保持克制与真实，避免不必要的承诺。
+            </p>
+        </div>
+
+        <!-- 额外卡片: 场景 (右列) -->
+        <div class="card">
+            <h3>使用场景举例</h3>
+            <ul>
+                <li>想快速找到固定入口，不再被杂讯干扰</li>
+                <li>了解页面各模块的作用与内容分布</li>
+                <li>在电脑或手机上获得一致的浏览感受</li>
+                <li>通过 FAQ 预览提前解决简单疑问</li>
+            </ul>
+        </div>
+
+        <!-- 额外卡片: 提示 (左列) -->
+        <div class="card">
+            <h3>一点小提示</h3>
+            <p>建议将页面加入浏览器书签，方便日后直接访问。如果遇到临时加载问题，可稍后刷新重试。所有链接均指向当前维护中的地址。</p>
+        </div>
+
+    </div>
+
+    <!-- FAQ 摘要 -->
+    <section class="faq-summary">
+        <h3>FAQ 摘要</h3>
+        <div class="faq-item">
+            <div class="faq-q">问：页面上的链接指向哪里？</div>
+            <div class="faq-a">所有链接均指向 <a href="https://portal-crown.com" style="color:#2b3b4b;text-decoration:underline;">皇冠体育</a>，是该服务的稳定入口之一。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">问：需要注册或下载才能访问吗？</div>
+            <div class="faq-a">不需要。直接通过浏览器打开即可查看页面内容，无需额外步骤。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">问：页面会频繁变动吗？</div>
+            <div class="faq-a">我们保持内容稳定，只会在必要时进行结构或信息更新，减少对日常访问的影响。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">问：如何获得最新入口信息？</div>
+            <div class="faq-a">建议保存当前页面或定期回访，地址如有调整会在此说明。</div>
+        </div>
+    </section>
+
+    <!-- 底部链接 -->
+    <footer class="footer-links">
+        <a href="https://portal-crown.com">皇冠体育</a>
+        <span>·</span>
+        <span>页面说明</span>
+        <span>·</span>
+        <span>保持稳定</span>
+    </footer>
+
+</div>
+</body>
+</html>
