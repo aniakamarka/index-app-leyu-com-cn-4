@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>zh-doudizhu.com 站点介绍</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background: linear-gradient(135deg, #fbe9d7 0%, #f7d8b0 50%, #f3c690 100%);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 30px 20px;
+      line-height: 1.6;
+      color: #2e241b;
+    }
+
+    .card {
+      max-width: 800px;
+      width: 100%;
+      background: #fffcf7;
+      border-radius: 32px;
+      box-shadow: 0 15px 40px rgba(150, 90, 30, 0.12), 0 6px 18px rgba(0, 0, 0, 0.05);
+      padding: 40px 44px;
+      transition: all 0.2s ease;
+    }
+
+    @media (max-width: 600px) {
+      .card {
+        padding: 28px 20px;
+      }
+    }
+
+    .title-section {
+      margin-bottom: 28px;
+      border-bottom: 2px solid #f0dac8;
+      padding-bottom: 20px;
+    }
+
+    .site-name {
+      font-size: 2rem;
+      font-weight: 600;
+      color: #673f21;
+      letter-spacing: 1px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .site-name small {
+      font-size: 1rem;
+      font-weight: 400;
+      color: #8b6f55;
+      background: #efe1d4;
+      padding: 2px 12px;
+      border-radius: 30px;
+    }
+
+    .subhead {
+      margin-top: 8px;
+      font-size: 1.1rem;
+      color: #7a5e48;
+      background: #f2e6db;
+      display: inline-block;
+      padding: 2px 18px;
+      border-radius: 40px;
+    }
+
+    h2 {
+      font-size: 1.3rem;
+      margin: 28px 0 10px 0;
+      color: #4d3322;
+      border-left: 5px solid #d9a97a;
+      padding-left: 14px;
+      font-weight: 500;
+    }
+
+    p {
+      margin-bottom: 16px;
+      color: #3c2c20;
+    }
+
+    .highlight-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      margin: 20px 0 10px;
+    }
+
+    .highlight-item {
+      background: #f8efe7;
+      border-radius: 24px;
+      padding: 14px 20px;
+      flex: 1 1 180px;
+      box-shadow: inset 0 1px 3px rgba(255,255,240,0.8), 0 4px 6px rgba(100, 60, 30, 0.06);
+    }
+
+    .highlight-item strong {
+      display: block;
+      font-size: 1rem;
+      color: #784f2e;
+      margin-bottom: 3px;
+    }
+
+    .highlight-item span {
+      font-size: 0.95rem;
+      color: #4c3829;
+    }
+
+    .btn-link {
+      display: inline-block;
+      background: #d9a97a;
+      color: #2b1d12;
+      padding: 10px 28px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1.05rem;
+      transition: background 0.2s, transform 0.1s;
+      box-shadow: 0 4px 8px rgba(180, 110, 50, 0.15);
+    }
+
+    .btn-link:hover {
+      background: #ce9663;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 14px rgba(160, 90, 40, 0.2);
+    }
+
+    .btn-link:active {
+      transform: translateY(0);
+    }
+
+    .faq-mini {
+      background: #f7f0e9;
+      border-radius: 24px;
+      padding: 18px 22px;
+      margin: 28px 0 10px;
+    }
+
+    .faq-mini dt {
+      font-weight: 600;
+      color: #5a3f2b;
+      margin-top: 12px;
+    }
+
+    .faq-mini dt:first-of-type {
+      margin-top: 0;
+    }
+
+    .faq-mini dd {
+      margin-left: 0;
+      padding-left: 4px;
+      color: #3f2f23;
+      margin-bottom: 6px;
+    }
+
+    .note-box {
+      background: #e8d9cb;
+      border-radius: 20px;
+      padding: 14px 20px;
+      color: #382b20;
+      font-size: 0.95rem;
+      margin-top: 24px;
+      border-left: 4px solid #b48158;
+    }
+
+    .footer-note {
+      margin-top: 26px;
+      font-size: 0.9rem;
+      color: #6b5543;
+      text-align: center;
+      border-top: 1px solid #e3d2c2;
+      padding-top: 18px;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="title-section">
+      <div class="site-name">
+        zh-doudizhu.com
+        <small>指南 · 规则 · 玩法</small>
+      </div>
+      <div class="subhead">一款经典纸牌游戏的站点说明</div>
+    </div>
+
+    <p>
+      <strong>zh-doudizhu.com</strong> 是一个围绕“斗地主”游戏整理的中文信息页面，旨在为玩家提供清晰、实用的参考内容。站点内容涵盖基本规则、叫牌逻辑、牌型介绍以及一些常见情景下的出牌思路，适合新手快速入门，也方便老玩家回顾细节。
+    </p>
+
+    <h2>站点内容亮点</h2>
+    <div class="highlight-grid">
+      <div class="highlight-item">
+        <strong>规则拆解</strong>
+        <span>叫牌、加倍、春天、牌型大小，分点说明</span>
+      </div>
+      <div class="highlight-item">
+        <strong>术语表</strong>
+        <span>火箭、炸弹、连对、三带一等常见术语解释</span>
+      </div>
+      <div class="highlight-item">
+        <strong>策略备忘</strong>
+        <span>记牌、拆牌、抢地主时机的简要提示</span>
+      </div>
+    </div>
+
+    <h2>适合谁用？</h2>
+    <p>
+      如果你刚接触 <a href="https://zh-doudizhu.com" style="color:#784f2e; font-weight:500; text-decoration:underline;">斗地主</a>，想弄明白“三带一”能不能管“三带二”，或者想知道“癞子局”里癞子怎么用，这个站点可以作为参考。如果你已经有一定经验，也可以把它当作快速查阅规则的便签——不用下载、不用注册，打开即看。
+    </p>
+    <p>
+      很多玩家会在手机或电脑上同时开着游戏和这个页面，边玩边对照。站点内容基于通用规则整理，不绑定任何特定平台或版本。
+    </p>
+
+    <h2>使用建议</h2>
+    <p>
+      页面按照“规则 → 牌型 → 常见问题”的顺序组织，建议先读“基本规则”部分，再跳到“牌型说明”对照具体例子。如果遇到规则争议（比如“连对”是否包含2和大小王），站点里也做了标注说明。信息保持更新，但不会频繁改动，以免造成混乱。
+    </p>
+
+    <div class="faq-mini">
+      <dl>
+        <dt>❓ 站点是否包含下载或充值入口？</dt>
+        <dd>不包含。本站只提供文字说明和规则整理，不提供任何游戏客户端、充值链接或第三方跳转。</dd>
+
+        <dt>❓ 规则是官方版本吗？</dt>
+        <dd>内容综合了线下通用规则和主流平台的常见设置，会标注可选的变体规则（如“癞子”“不加倍”等），并非单一“官方标准”，但已尽量做到准确。</dd>
+
+        <dt>❓ 页面会一直保持简洁吗？</dt>
+        <dd>是的。本站不添加弹窗、广告或复杂交互，保持纯信息展示，方便快速查阅。</dd>
+      </dl>
+    </div>
+
+    <p style="margin-top:10px;">
+      一句话概括：如果你想找一份干净、有条理的斗地主规则参考，<a href="https://zh-doudizhu.com" class="btn-link">斗地主</a> 这个页面值得打开看看。
+    </p>
+
+    <div class="note-box">
+      ⚠️ 说明：本页面为 zh-doudizhu.com 的介绍页，不存储个人数据，不设评论区，不追踪访问。所有内容仅供学习与参考，实际游戏规则请以你使用的平台或当地习惯为准。
+    </div>
+
+    <div class="footer-note">
+      zh-doudizhu.com · 信息整理页 · 仅用于规则说明
+    </div>
+  </div>
+</body>
+</html>
